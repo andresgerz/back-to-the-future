@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <h1>Back to the future</h1>
-
-    <Display/>
-    <Form/>
+    <Display year="1985" month="OCT" day="26" hour="01" min="21" subtitle="DESTINATION TIME" />
+    <Display year="1985" month="OCT" day="26" hour="01" min="22" subtitle="PRESENT TIME" />
+    <Display year="1985" month="OCT" day="26" hour="01" min="20" subtitle="LAST TIME DEPARTED" />
   </div>
 </template>
 
@@ -24,7 +23,10 @@ export default {
 </script>
 
 <style>
+
 #app {
+  width: 100%;
+  height: 100vh;
   background-color: #525358;
   text-align: center;
 }

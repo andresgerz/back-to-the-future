@@ -5,7 +5,7 @@
         <label :for="`type-${type[0]}`">{{ type[1] }}</label>
       </b-row>
       <b-row sm="2">
-        <b-form-input :id="`type-${type[0]}`" :type="`${type[0]}`"></b-form-input>
+        <b-form-input :id="`${type[2]}`" :type="`${type[0]}`" :v-model='`${type[2]}`'></b-form-input>
       </b-row>
     </b-col>
   </b-form>
@@ -15,15 +15,27 @@
 
 
 export default {
-    data() {
-      return {
-        types: [
-          ['date', 'Date'],
-          ['number', 'Hour'],
-          ['number', 'Minute']
-        ]
-      }
+  name: 'form',
+  data() {
+    return {
+      types: [
+        ['date', 'Date', 'date'],
+        ['number', 'Hour', 'hour'],
+        ['number', 'Minute', 'minute']
+      ],
+      date: '',
+      hour: '',
+      minuto: ''
+
     }
+  },
+  methods: {
+    dataDate() {
+      this.date;
+      this.hour;
+      this.minuto;
+    }
+  }
 }
 </script>
 
