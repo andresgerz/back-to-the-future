@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <Display year="1985" month="OCT" day="26" hour="01" min="21" subtitle="DESTINATION TIME" />
-    <Display year="1985" month="OCT" day="26" hour="01" min="22" subtitle="PRESENT TIME" />
-    <Display year="1985" month="OCT" day="26" hour="01" min="20" subtitle="LAST TIME DEPARTED" />
+    <Display :gYear="getYear" :gMonth="getMonth" :gDay="getDay" :gHour="getHour" :gMin="getMinute" subtitle="DESTINATION TIME" />
+    <Display :gYear="getYear" :gMonth="getMonth" :gDay="getDay" :gHour="getHour" :gMin="getMinute" subtitle="PRESENT TIME" />
+    <Display :gYear="getYear" :gMonth="getMonth" :gDay="getDay" :gHour="getHour" :gMin="getMinute" subtitle="LAST TIME DEPARTED" />
+    <Buttons />
   </div>
 </template>
 
 <script>
 
 import Display from './components/Display.vue';
-import Form from './components/Form.vue';
+import Buttons from './components/Buttons.vue';
 
 export default {
   name: 'App',
   components: {
     Display,
-    Form
+    Buttons
+  },
+  methods: {
+    getMinute() {
+      return new Date().getMinutes();
+    },
+    getHour() {
+      return new Date().getHours();
+    },
+    getDay() {
+      return new Date().getDate();
+    },
+    getMonth() {
+      return String(new Date()).substring(4,7);
+    },
+    getYear() {
+      return new Date().getFullYear(); 
+    }
   }
-
-  
-}
+};
 </script>
 
 <style>
 
 #app {
   width: 100%;
-  height: 100vh;
   background-color: #525358;
   text-align: center;
 }

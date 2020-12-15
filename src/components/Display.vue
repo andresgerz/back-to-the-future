@@ -3,15 +3,15 @@
     <div class="container">
       <div class="item">
         <strong>MONTH</strong>
-        <p class="text-time">{{ month }}</p>
+        <p class="text-time">{{ gMonth() }}</p>
       </div>
       <div class="item">
         <strong>DAY</strong>
-        <p class="text-time">{{ day }}</p>
+        <p class="text-time">{{ gDay() }}</p>
       </div>
       <div class="item">
         <strong>YEAR</strong>
-        <p class="text-time">{{ year }}</p>
+        <p class="text-time">{{ gYear() }}</p>
       </div>
       <div class="item am-pm">
         <div><strong>AM</strong></div>
@@ -19,7 +19,7 @@
       </div>
       <div class="item">
         <strong>HOUR</strong>
-        <p class="text-time">{{ hour }}</p>
+        <p class="text-time">{{ gHour() }}</p>
       </div>
       <div class="points">
         <p>.</p>
@@ -27,7 +27,7 @@
       </div>
       <div class="item">
         <strong>MIN</strong>
-        <p class="text-time">{{ min }}</p>
+        <p class="text-time">{{ gMin() }}</p>
       </div>
     </div>
     <div class="subtitle">
@@ -64,6 +64,21 @@
       subtitle: {
         type: String,
         required: true
+      },
+      gMin: {
+        type: Function
+      },
+      gHour: {
+        type: Function
+      },
+      gDay: {
+        type: Function
+      },
+      gMonth: {
+        type: Function
+      },
+      gYear: {
+        type: Function
       }
     }
   }
